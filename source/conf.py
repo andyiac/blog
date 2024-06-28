@@ -34,7 +34,8 @@ author = 'findview'
 extensions = [
     'sphinx_rtd_theme',
     'myst_parser',
-    'sphinx.ext.toctree',
+    'sphinx.ext.autosectionlabel'
+    # 'sphinx.ext.toctree',
 ]
 
 templates_path = ['_templates']
@@ -56,13 +57,24 @@ source_suffix = {
 }
 
 
+html_show_sourcelink = False
+
+
 html_theme_options = {
-    # 其他主题选项...
-    'show_version': False,
-    'show_sphinx': False,
-    'show_related': False,
-    'show_source': False,
+    'analytics_id': 'G-XXXXXXXXXX',  #  Provided by Google in your dashboard
+    'analytics_anonymize_ip': False,
+    'logo_only': False,
+    'display_version': False,
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': False,
+    'vcs_pageview_mode': '',
+    'style_nav_header_background': '#404040',
+    # Toc options
+    'collapse_navigation': True,
+    'sticky_navigation': True,
     'navigation_depth': 3,
-    'navigation_with_keys': True,
-    'display_toc_level': 1,
+    'includehidden': True,
+    'titles_only': True,
+    "navigation_with_keys": True,
+
 }
