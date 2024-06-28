@@ -1,3 +1,21 @@
+import os
+import sys
+
+
+
+import sys
+print(sys.path)
+
+
+basedir = os.path.abspath(os.path.join('..', '..', 'kotlin-demo/source/'))
+
+
+print("---------- base dir ----> " + basedir)
+
+sys.path.insert(0, basedir)
+
+
+
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -16,11 +34,11 @@ author = 'findview'
 extensions = [
     'sphinx_rtd_theme',
     'myst_parser',
+    'sphinx.ext.toctree',
 ]
 
 templates_path = ['_templates']
 exclude_patterns = []
-
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -35,4 +53,16 @@ source_suffix = {
     '.rst': 'restructuredtext',
     '.txt': 'markdown',
     '.md': 'markdown',
+}
+
+
+html_theme_options = {
+    # 其他主题选项...
+    'show_version': False,
+    'show_sphinx': False,
+    'show_related': False,
+    'show_source': False,
+    'navigation_depth': 3,
+    'navigation_with_keys': True,
+    'display_toc_level': 1,
 }
