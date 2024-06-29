@@ -1,18 +1,10 @@
 import os
 import sys
 
-
-
-import sys
-print(sys.path)
-
-
-basedir = os.path.abspath(os.path.join('..', '..', 'kotlin-demo/source/'))
-
-
-print("---------- base dir ----> " + basedir)
-
-sys.path.insert(0, basedir)
+# print(sys.path)
+# basedir = os.path.abspath(os.path.join('..', '..', 'kotlin-demo/source/'))
+# print("---------- base dir ----> " + basedir)
+# sys.path.insert(0, basedir)
 
 
 

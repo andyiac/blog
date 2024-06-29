@@ -13,6 +13,7 @@ Kotlin Demos
 
    01_intro.md
    02_basics.md
+   03_collections.md
 
 
 .. Indices 
