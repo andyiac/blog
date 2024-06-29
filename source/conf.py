@@ -17,8 +17,8 @@ import sys
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'kotlin-demo'
-copyright = '2024, findview'
-author = 'findview'
+copyright = '2024, andyiac'
+author = 'andyiac'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
