@@ -45,3 +45,27 @@ val safeList = list ?: emptyList()
 ```
 
 注意这里的 `?:` 运算符的使用
+
+
+
+## Initializer functions for lists
+
+
+Creates a new read-only list with the specified size, where each element is calculated by calling the specified init function.
+The function init is called for each list element sequentially starting from the first one. It should return the value for a list element given its index.
+
+```kotlin
+val doubled = List(3, { it * 2 })
+println(doubled)
+
+// MutableList if you want to change its content later
+val doubled2 = MutableList(3, { it * 3 })
+doubled2.add(100)
+println(doubled2)
+
+// console: 
+// [0, 2, 4]
+// [0, 3, 6, 100]
+```
+
+
