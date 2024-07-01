@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="./">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -15,9 +15,9 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=8a448e45"></script>
-        <script src="_static/doctools.js?v=9a2dae69"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=ccbe24c1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -74,9 +74,9 @@
            <div itemprop="articleBody">
              
   <section id="collections">
-<h1><span class="section-number">3. </span>Collections<a class="headerlink" href="#collections" title="Link to this heading"></a></h1>
+<h1><span class="section-number">3. </span>Collections<a class="headerlink" href="#collections" title="Permalink to this heading"></a></h1>
 <section id="collection-builder-functions">
-<h2><span class="section-number">3.1. </span>collection builder functions<a class="headerlink" href="#collection-builder-functions" title="Link to this heading"></a></h2>
+<h2><span class="section-number">3.1. </span>collection builder functions<a class="headerlink" href="#collection-builder-functions" title="Permalink to this heading"></a></h2>
 <p>Another way of creating a collection is to call a builder function – buildList(), buildSet(), or buildMap(). They create a new, mutable collection of the corresponding type, populate it using write operations, and return a read-only collection with the same elements:</p>
 <div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="kd">val</span><span class="w"> </span><span class="nv">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buildMap</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// this is MutableMap&lt;String, Int&gt;, types of key and value are inferred from the `put()` calls below</span>
 <span class="w">    </span><span class="n">put</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
@@ -89,7 +89,7 @@
 </div>
 </section>
 <section id="empty-collection">
-<h2><span class="section-number">3.2. </span>empty collection<a class="headerlink" href="#empty-collection" title="Link to this heading"></a></h2>
+<h2><span class="section-number">3.2. </span>empty collection<a class="headerlink" href="#empty-collection" title="Permalink to this heading"></a></h2>
 <p>There are also functions for creating collections without any elements: emptyList(), emptySet(), and emptyMap(). When creating empty collections, you should specify the type of elements that the collection will hold.</p>
 <div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="kd">val</span><span class="w"> </span><span class="nv">empty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emptyList</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">()</span>
 </pre></div>
@@ -115,7 +115,7 @@
 <p>注意这里的 <code class="docutils literal notranslate"><span class="pre">?:</span></code> 运算符的使用</p>
 </section>
 <section id="initializer-functions-for-lists">
-<h2><span class="section-number">3.3. </span>Initializer functions for lists<a class="headerlink" href="#initializer-functions-for-lists" title="Link to this heading"></a></h2>
+<h2><span class="section-number">3.3. </span>Initializer functions for lists<a class="headerlink" href="#initializer-functions-for-lists" title="Permalink to this heading"></a></h2>
 <p>Creates a new read-only list with the specified size, where each element is calculated by calling the specified init function.
 The function init is called for each list element sequentially starting from the first one. It should return the value for a list element given its index.</p>
 <div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="kd">val</span><span class="w"> </span><span class="nv">doubled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">it</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="p">})</span>
