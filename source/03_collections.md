@@ -86,7 +86,7 @@ println(nums)
 
 ```
 
-## filter filterNot
+## filter && filterNot
 
 ```kotlin
 open class Person(val name: String, val age: Int) {
@@ -97,20 +97,33 @@ open class Person(val name: String, val age: Int) {
 
 class Cyborg(name: String) : Person(name, 99)
 
-val people = listOf(
+var people = listOf(
     Person("Joe", 15),
     Person("ZhangSan", 25),
+    null,
     Person("LiSi", 22),
+    null,
     Cyborg("Rob")
 )
 
-val discoVisitors = people.filter {
+val actualPeople = people.filterNotNull()
+
+val discoVisitors = actualPeople.filter {
     it.age >= 18
 }
 
+discoVisitors
 
-val students = people.filterNot {
+val students = actualPeople.filterNot {
     it.age >= 18
 }
+
+students
+
+actualPeople.partition {
+    it.age >= 18
+}
+
+// ([ZhangSan, LiSi, Rob], [Joe])
 
 ```
