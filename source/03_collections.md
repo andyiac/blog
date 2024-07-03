@@ -108,11 +108,9 @@ val discoVisitors = people.filter {
     it.age >= 18
 }
 
-discoVisitors
 
 val students = people.filterNot {
     it.age >= 18
 }
 
-students
 ```
