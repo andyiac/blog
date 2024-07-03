@@ -134,6 +134,51 @@ The function init is called for each list element sequentially starting from the
 </pre></div>
 </div>
 </section>
+<section id="map">
+<h2><span class="section-number">3.4. </span>map<a class="headerlink" href="#map" title="Permalink to this heading"></a></h2>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nv">strs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;test&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;4&quot;</span><span class="p">)</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nv">nums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strs</span><span class="p">.</span><span class="na">mapNotNull</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nb">it</span><span class="p">.</span><span class="na">toIntOrNull</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="n">println</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+
+<span class="c1">// [1, 2, 3, 4, 4]</span>
+</pre></div>
+</div>
+</section>
+<section id="filter-filternot">
+<h2><span class="section-number">3.5. </span>filter filterNot<a class="headerlink" href="#filter-filternot" title="Permalink to this heading"></a></h2>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="kd">open</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">age</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">toString</span><span class="p">():</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">name</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nc">Cyborg</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Person</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="m">99</span><span class="p">)</span>
+
+<span class="kd">val</span><span class="w"> </span><span class="nv">people</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="p">(</span>
+<span class="w">    </span><span class="n">Person</span><span class="p">(</span><span class="s">&quot;Joe&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">15</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Person</span><span class="p">(</span><span class="s">&quot;ZhangSan&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">25</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Person</span><span class="p">(</span><span class="s">&quot;LiSi&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">22</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Cyborg</span><span class="p">(</span><span class="s">&quot;Rob&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="kd">val</span><span class="w"> </span><span class="nv">discoVisitors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">people</span><span class="p">.</span><span class="na">filter</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nb">it</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">18</span>
+<span class="p">}</span>
+
+<span class="n">discoVisitors</span>
+
+<span class="kd">val</span><span class="w"> </span><span class="nv">students</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">people</span><span class="p">.</span><span class="na">filterNot</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nb">it</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">18</span>
+<span class="p">}</span>
+
+<span class="n">students</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 

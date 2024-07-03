@@ -69,3 +69,50 @@ println(doubled2)
 ```
 
 
+
+
+## map
+
+```kotlin
+var strs = listOf("1", "2", "test", "3", "4", "4")
+
+var nums = strs.mapNotNull {
+    it.toIntOrNull()
+}
+
+println(nums)
+
+// [1, 2, 3, 4, 4]
+
+```
+
+## filter filterNot
+
+```kotlin
+open class Person(val name: String, val age: Int) {
+    override fun toString(): String {
+        return name
+    }
+}
+
+class Cyborg(name: String) : Person(name, 99)
+
+val people = listOf(
+    Person("Joe", 15),
+    Person("ZhangSan", 25),
+    Person("LiSi", 22),
+    Cyborg("Rob")
+)
+
+val discoVisitors = people.filter {
+    it.age >= 18
+}
+
+discoVisitors
+
+val students = people.filterNot {
+    it.age >= 18
+}
+
+students
+```
