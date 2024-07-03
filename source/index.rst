@@ -14,7 +14,7 @@ Kotlin Demos
    01_intro.md
    02_basics.md
    03_collections.md
-
+   04_sequence.md
 
 .. Indices 
 .. =======
