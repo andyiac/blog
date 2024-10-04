@@ -16,3 +16,6 @@
 
 - [kotlin lang home](https://kotlinlang.org/docs/home.html)
 - [100things](https://100things.readthedocs.io/en/latest/)
+
+
+- [kotlin notes ](https://andyiac.github.io/kotlin)
