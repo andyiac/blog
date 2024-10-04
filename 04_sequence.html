@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4. Sequence &mdash; blog  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=8a448e45"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="3. Collections" href="03_collections.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #404040" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            blog
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">基础:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="01_intro.html">1. Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_basics.html">2. Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_collections.html">3. Collections</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Sequence</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #404040" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">blog</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4. </span>Sequence</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sequence">
+<h1><span class="section-number">4. </span>Sequence<a class="headerlink" href="#sequence" title="Link to this heading"></a></h1>
+<section id="yield">
+<h2><span class="section-number">4.1. </span>yield<a class="headerlink" href="#yield" title="Link to this heading"></a></h2>
+<p>在Kotlin中，<code class="docutils literal notranslate"><span class="pre">yield</span></code>函数通常与<code class="docutils literal notranslate"><span class="pre">sequence</span></code>构建器一起使用，用于创建惰性计算的序列。除了在生成序列时使用外，<code class="docutils literal notranslate"><span class="pre">yield</span></code>还可以在其他一些场景中使用，例如：</p>
+<ol class="arabic simple">
+<li><p><strong>自定义迭代器</strong>：您可以使用<code class="docutils literal notranslate"><span class="pre">yield</span></code>来自定义迭代器，以便在遍历集合或序列时逐个生成值。</p></li>
+<li><p><strong>协程中的通道(Channel)</strong>：在Kotlin的协程中，<code class="docutils literal notranslate"><span class="pre">yield</span></code>也可以用于创建通道(Channel)。<code class="docutils literal notranslate"><span class="pre">yield</span></code>在这种情况下可以用来发送值到通道中。</p></li>
+<li><p><strong>状态机</strong>：<code class="docutils literal notranslate"><span class="pre">yield</span></code>可以用于实现简单的状态机，通过暂停和恢复函数执行来处理不同的状态。</p></li>
+<li><p><strong>生成器模式</strong>：在一些情况下，<code class="docutils literal notranslate"><span class="pre">yield</span></code>可以用于实现生成器模式，通过逐步生成数据项来构建复杂的数据结构。</p></li>
+</ol>
+<p>总的来说，<code class="docutils literal notranslate"><span class="pre">yield</span></code>在Kotlin中主要用于生成序列中的值，但也可以在其他一些场景中用作控制流的工具，例如自定义迭代器、协程中的通道、状态机等。通过暂停和恢复函数执行，<code class="docutils literal notranslate"><span class="pre">yield</span></code>使得在需要时逐步生成值变得更加灵活和高效。</p>
+<p>当使用<code class="docutils literal notranslate"><span class="pre">yield</span></code>函数在不同情况下时，以下是每种情况的简要说明：</p>
+<ol class="arabic">
+<li><p><strong>生成序列</strong>：</p>
+<ul>
+<li><p><strong>使用方法</strong>：在生成序列时，您可以在<code class="docutils literal notranslate"><span class="pre">sequence</span></code>构建器中定义一个函数，并在需要时使用<code class="docutils literal notranslate"><span class="pre">yield</span></code>来逐个生成序列中的值。每次调用<code class="docutils literal notranslate"><span class="pre">yield</span></code>都会生成一个新的值，并暂停函数执行，直到再次调用生成的序列。</p></li>
+<li><p><strong>示例</strong>：</p>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="kd">fun</span><span class="w"> </span><span class="nf">generateSequence</span><span class="p">():</span><span class="w"> </span><span class="n">Sequence</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sequence</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1.</span><span class="p">.</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">yield</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">sequence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">generateSequence</span><span class="p">()</span>
+<span class="n">println</span><span class="p">(</span><span class="n">sequence</span><span class="p">.</span><span class="na">toList</span><span class="p">())</span><span class="w"> </span><span class="c1">// 输出: [1, 2, 3, 4, 5]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>自定义迭代器</strong>：</p>
+<ul>
+<li><p><strong>使用方法</strong>：您可以创建一个自定义的迭代器，并在迭代器的<code class="docutils literal notranslate"><span class="pre">next()</span></code>方法中使用<code class="docutils literal notranslate"><span class="pre">yield</span></code>来逐个生成值。这样可以控制迭代器在遍历时逐个返回值。</p></li>
+<li><p><strong>示例</strong>：</p>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nc">CustomIterator</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Iterator</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">hasNext</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">5</span>
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">next</span><span class="p">():</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">current</span><span class="o">++</span><span class="p">.</span><span class="na">also</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">yield</span><span class="p">(</span><span class="nb">it</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">iterator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CustomIterator</span><span class="p">()</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iterator</span><span class="p">.</span><span class="na">asSequence</span><span class="p">().</span><span class="na">toList</span><span class="p">()</span>
+<span class="n">println</span><span class="p">(</span><span class="n">list</span><span class="p">)</span><span class="w"> </span><span class="c1">// 输出: [0, 1, 2, 3, 4]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>协程中的通道(Channel)</strong>：</p>
+<ul>
+<li><p><strong>使用方法</strong>：在Kotlin的协程中，您可以使用<code class="docutils literal notranslate"><span class="pre">yield</span></code>来发送值到通道中。<code class="docutils literal notranslate"><span class="pre">yield</span></code>在这种情况下可以用作发送操作，将值发送到通道，以便其他协程可以接收。</p></li>
+<li><p><strong>示例</strong>：</p>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="kd">fun</span><span class="w"> </span><span class="nf">produceNumbers</span><span class="p">():</span><span class="w"> </span><span class="n">Channel</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GlobalScope</span><span class="p">.</span><span class="na">produce</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1.</span><span class="p">.</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">yield</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="n">runBlocking</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">channel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">produceNumbers</span><span class="p">()</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">element</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">channel</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">println</span><span class="p">(</span><span class="n">element</span><span class="p">)</span><span class="w"> </span><span class="c1">// 逐个输出: 1, 2, 3, 4, 5</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>状态机</strong>：</p>
+<ul>
+<li><p><strong>使用方法</strong>：<code class="docutils literal notranslate"><span class="pre">yield</span></code>可以用于实现简单的状态机，通过暂停和恢复函数执行来处理不同的状态。在每个状态下，可以使用<code class="docutils literal notranslate"><span class="pre">yield</span></code>来生成相应的值，并在需要时切换到下一个状态。</p></li>
+<li><p><strong>示例</strong>：</p>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="kd">fun</span><span class="w"> </span><span class="nf">simpleStateMachine</span><span class="p">():</span><span class="w"> </span><span class="n">Sequence</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sequence</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">when</span><span class="w"> </span><span class="p">(</span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="m">1</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">yield</span><span class="p">(</span><span class="s">&quot;State 1&quot;</span><span class="p">)</span>
+<span class="w">                </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="m">2</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">yield</span><span class="p">(</span><span class="s">&quot;State 2&quot;</span><span class="p">)</span>
+<span class="w">                </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">stateMachine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simpleStateMachine</span><span class="p">().</span><span class="na">iterator</span><span class="p">()</span>
+<span class="n">repeat</span><span class="p">(</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="n">stateMachine</span><span class="p">.</span><span class="na">next</span><span class="p">())</span>
+<span class="p">}</span>
+<span class="c1">// 输出: State 1, State 2, State 1, State 2, State 1</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+<p>这些示例展示了在不同情况下如何使用<code class="docutils literal notranslate"><span class="pre">yield</span></code>函数来逐个生成值，包括生成序列、自定义迭代器、协程中的通道和状态机。在每种情况下，<code class="docutils literal notranslate"><span class="pre">yield</span></code>都可以用于控制流程，逐步生成值或处理不同的状态。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="03_collections.html" class="btn btn-neutral float-left" title="3. Collections" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, andyiac.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XXXXXXXXXX', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>
