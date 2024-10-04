@@ -16,7 +16,7 @@ import sys
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'kotlin-demo'
+project = 'blog'
 copyright = '2024, andyiac'
 author = 'andyiac'
 
@@ -68,5 +68,4 @@ html_theme_options = {
     'includehidden': True,
     'titles_only': True,
     "navigation_with_keys": True,
-
 }
